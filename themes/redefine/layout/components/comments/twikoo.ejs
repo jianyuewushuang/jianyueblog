@@ -1,0 +1,78 @@
+<% if(theme.comment.system === 'twikoo' && theme.comment.config.twikoo.server_url) { %>
+    <div class="twikoo-container">
+        <script <%= theme.global.single_page === true && 'data-swup-reload-script' %>
+                src='https://cdnjs.cloudflare.com/ajax/libs/twikoo/<%- theme.comment.config.twikoo.version %>/twikoo.all.min.js'
+        ></script>
+        <div id="twikoo-comment"></div>
+        <script <%= theme.global.single_page === true && 'data-swup-reload-script' %>>
+            (function() {
+                const startPath = location.pathname;
+                const startTime = Date.now();
+                const retryDelay = 200;
+                const retryLimit = 5000;
+
+                const runTwikoo = () => {
+                    if (location.pathname !== startPath) {
+                        return;
+                    }
+
+                    const container = document.getElementById('twikoo-comment');
+                    if (!container || typeof twikoo === 'undefined') {
+                        if (Date.now() - startTime < retryLimit) {
+                            setTimeout(runTwikoo, retryDelay);
+                        }
+                        return;
+                    }
+
+                    container.innerHTML = '';
+                    twikoo.init({
+                        el: '#twikoo-comment',
+                        envId: '<%= theme.comment.config.twikoo.server_url %>',
+                        path: location.pathname,
+                    });
+                };
+
+                runTwikoo();
+            })();
+        </script>
+    </div>
+<% } else if (theme.comment.system === 'twikoo' && theme.comment.config.twikoo.server_url && theme.comment.config.twikoo.region) { %>
+    <div class="twikoo-container">
+        <script <%= theme.global.single_page === true && 'data-swup-reload-script' %>
+                src='<%- theme.comment_version.twikoo %>'
+        ></script>
+        <div id="twikoo-comment"></div>
+        <script <%= theme.global.single_page === true && 'data-swup-reload-script' %>>
+            (function() {
+                const startPath = location.pathname;
+                const startTime = Date.now();
+                const retryDelay = 200;
+                const retryLimit = 5000;
+
+                const runTwikoo = () => {
+                    if (location.pathname !== startPath) {
+                        return;
+                    }
+
+                    const container = document.getElementById('twikoo-comment');
+                    if (!container || typeof twikoo === 'undefined') {
+                        if (Date.now() - startTime < retryLimit) {
+                            setTimeout(runTwikoo, retryDelay);
+                        }
+                        return;
+                    }
+
+                    container.innerHTML = '';
+                    twikoo.init({
+                        el: '#twikoo-comment',
+                        envId: '<%= theme.comment.config.twikoo.server_url %>',
+                        region: '<%= theme.comment.config.twikoo.region %>',
+                        path: location.pathname,
+                    });
+                };
+
+                runTwikoo();
+            })();
+        </script>
+    </div>
+<% } %>

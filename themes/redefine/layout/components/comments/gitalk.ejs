@@ -1,0 +1,58 @@
+<% if(
+        theme.comment.system === 'gitalk'
+        && theme.comment.config.gitalk.clientID
+        && theme.comment.config.gitalk.clientSecret
+        && theme.comment.config.gitalk.owner
+        && theme.comment.config.gitalk.repo
+) { %>
+    <div id="gitalk-container"></div>
+    <script <%= theme.global.single_page === true && 'data-swup-reload-script' %>
+            src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+    <script <%= theme.global.single_page === true && 'data-swup-reload-script' %>>
+        (function() {
+            const startPath = location.pathname;
+            const startTime = Date.now();
+            const retryDelay = 200;
+            const retryLimit = 5000;
+
+            const runGitalk = () => {
+                if (location.pathname !== startPath) {
+                    return;
+                }
+
+                const container = document.getElementById('gitalk-container');
+                if (!container || typeof Gitalk === 'undefined') {
+                    if (Date.now() - startTime < retryLimit) {
+                        setTimeout(runGitalk, retryDelay);
+                    }
+                    return;
+                }
+
+                container.innerHTML = '';
+
+                let pageKey = decodeURI(location.pathname);
+                const maxLength = 50;
+                if (pageKey.length > maxLength) {
+                    pageKey = pageKey.substring(0, maxLength - 3) + '...';
+                }
+
+                try {
+                    new Gitalk({
+                        clientID: '<%= theme.comment.config.gitalk.clientID %>',
+                        clientSecret: '<%= theme.comment.config.gitalk.clientSecret %>',
+                        repo: '<%= theme.comment.config.gitalk.repo %>',
+                        owner: '<%= theme.comment.config.gitalk.owner %>',
+                        admin: ['<%= theme.comment.config.gitalk.owner %>'],
+                        id: pageKey,
+                        language: '<%= config.language %>',
+                        proxy: '<%= theme.comment.config.gitalk.proxy || "https://github.com/login/oauth/access_token" %>'
+                    }).render(container);
+                } catch (e) {
+                    window.Gitalk = null;
+                }
+            };
+
+            runGitalk();
+        })();
+    </script>
+<% } %>
