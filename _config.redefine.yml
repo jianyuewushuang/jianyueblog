@@ -11,7 +11,7 @@
 # Docs: https://redefine-docs.ohevan.com/basic/info
 info:
   # Site title
-  title: 简约博客
+  title: jianyueblog
   # Site subtitle
   subtitle: 一个分享知识与技术的个人博客
   # Author name
@@ -213,18 +213,21 @@ navbar:
   links:
     Home:
       path: /
-      icon: fa-regular fa-house # can be empty
+      icon: fa-solid fa-house # can be empty
     Archives:
       path: /archives
-      icon: fa-regular fa-archive # can be empty
+      icon: fa-solid fa-archive # can be empty
+    Categories:
+      path: /categories
+      icon: fa-solid fa-folder
     Tags:
       path: /tags
-      icon: fa-ragular fa-tags
+      icon: fa-solid fa-tags
     # Status:
     #   path: https://status.ohevan.com/
     #   icon: fa-regular fa-chart-bar
     About:
-      icon: fa-regular fa-user
+      icon: fa-solid fa-user
       submenus:
         Me: /about
         Github: https://github.com/jianyuewushuang/jianyueblog
@@ -341,7 +344,7 @@ articles:
   # Article recommendation. Requires nodejieba (npm install nodejieba). Transplanted from hexo-theme-volantis.
   recommendation:
     # Whether to enable article recommendation
-    enable: true
+    enable: false
     # Article recommendation title
     title: 推荐阅读
     # Max number of articles to display
