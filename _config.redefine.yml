@@ -11,13 +11,13 @@
 # Docs: https://redefine-docs.ohevan.com/basic/info
 info:
   # Site title
-  title: Theme Redefine
+  title: 简约博客
   # Site subtitle
-  subtitle: Redefine Your Hexo Journey.
+  subtitle: 一个分享知识与技术的个人博客
   # Author name
-  author: The Redefine Team
+  author: 简约无双
   # Site URL
-  url: https://redefine.ohevan.com
+  url: https://blog.jianyuewushuang.top
 # BASIC INFORMATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -25,11 +25,11 @@ info:
 # Docs: https://redefine-docs.ohevan.com/basic/defaults
 defaults:
   # Favicon
-  favicon: /images/redefine-favicon.svg
+  favicon: /images/avatar.jpg
   # Site logo
-  logo:
+  logo: /images/avatar.jpg
   # Site avatar
-  avatar: /images/redefine-avatar.svg
+  avatar: /images/avatar.jpg
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -37,11 +37,11 @@ defaults:
 # Docs: https://redefine-docs.ohevan.com/basic/colors
 colors:
   #Primary color
-  primary: "#A31F34"
+  primary: "#7509B6"
   # Secondary color (TBD)
-  secondary:
+  secondary: "#0153E5"
   # Default theme mode initial value (will be overwritten by prefer-color-scheme)
-  default_mode: light # light, dark
+  default_mode: dark # light, dark
 # COLORS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -72,10 +72,10 @@ global:
   # Effects on mouse hover
   hover:
     shadow: true # shadow effect
-    scale: false # scale effect
+    scale: true # scale effect
   # Scroll progress
   scroll_progress:
-    bar: false # progress bar
+    bar: true # progress bar
     percentage: true # percentage
   # Website counter
   website_counter:
@@ -88,8 +88,8 @@ global:
   single_page: true
   # Whether to enable Preloader.
   preloader:
-    enable: false
-    custom_message: # Custom message. If empty, the site title will be displayed
+    enable: true
+    custom_message: "欢迎来到我的博客!" # Custom message. If empty, the site title will be displayed
   # Side tools settings
   side_tools:
     # Whether to enable gear rotation animation for settings button
@@ -99,8 +99,8 @@ global:
   # Whether to enable open graph
   open_graph:
     enable: true
-    image: /images/redefine-og.webp  # default og:image
-    description: Hexo Theme Redefine, Redefine Your Hexo Journey.
+    image: /images/bg.avif  # default og:image
+    description: 一个分享知识与技术的个人博客
   # Google Analytics
   google_analytics:
     enable: false # Whether to enable Google Analytics
@@ -118,7 +118,7 @@ fontawesome: # Pro v6.2.1
   # Duotone version
   duotone: false
   # Sharp Solid version
-  sharp_solid: false
+  sharp_solid: true
 # FONTAWESOME <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -131,13 +131,13 @@ home_banner:
   style: fixed # static or fixed
   # Home banner image
   image:
-    light: /images/wallhaven-wqery6-light.webp # light mode
-    dark: /images/wallhaven-wqery6-dark.webp # dark mode
+    light: /images/bg.avif # light mode
+    dark: /images/bg.avif # dark mode
   # Home banner title
-  title: Theme Redefine
+  title: 简约博客
   # Home banner subtitle
   subtitle:
-    text: [] # subtitle text, array
+    text: ["一个分享知识与技术的个人博客", "欢迎来到我的博客!"] # subtitle text, array
     hitokoto:  # 一言配置
       enable: false # Whether to enable hitokoto
       show_author: false # Whether to show author
@@ -199,11 +199,11 @@ home_banner:
 # Docs: https://redefine-docs.ohevan.com/home/navbar
 navbar:
   # Auto hide navbar
-  auto_hide: false
+  auto_hide: true
   # Navbar background color
   color:
-    left: "#f78736" #left side
-    right: "#367df7"  #right side
+    left: "#7509B6" #left side
+    right: "#0153E5"  #right side
     transparency: 35 #percent (10-99)
   # Navbar width (usually no need to modify)
   width:
@@ -214,17 +214,20 @@ navbar:
     Home:
       path: /
       icon: fa-regular fa-house # can be empty
-    # Archives:
-    #   path: /archives
-    #   icon: fa-regular fa-archive # can be empty
+    Archives:
+      path: /archives
+      icon: fa-regular fa-archive # can be empty
+    Tags:
+      path: /tags
+      icon: fa-ragular fa-tags
     # Status:
     #   path: https://status.ohevan.com/
     #   icon: fa-regular fa-chart-bar
-    # About:
-    #   icon: fa-regular fa-user
-    #   submenus:
-    #     Me: /about
-    #     Github: https://github.com/EvanNotFound/hexo-theme-redefine
+    About:
+      icon: fa-regular fa-user
+      submenus:
+        Me: /about
+        Github: https://github.com/jianyuewushuang/jianyueblog
     #     Blog: https://ohevan.com
     #     Friends: /friends
     # Links:
@@ -237,7 +240,7 @@ navbar:
   # Navbar search (local search). Requires hexo-generator-searchdb (npm i hexo-generator-searchdb). See https://github.com/theme-next/hexo-generator-searchdb
   search:
     # Whether to enable
-    enable: false
+    enable: true
     # Preload search data when the page loads
     preload: true
 # NAVIGATION BAR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
@@ -251,18 +254,18 @@ home:
     enable: true # Whether to enable sidebar
     position: left # Sidebar position. left, right
     first_item: menu # First item in sidebar. menu, info
-    announcement: # Announcement text
+    announcement: "发扬开源精神，共享幸福人生" # Announcement text
     show_on_mobile: true # Whether to show sidebar navigation on mobile sheet menu
     links:
-      # Archives:
-      #   path: /archives
-      #   icon: fa-regular fa-archive # can be empty
-      # Tags:
-      #   path: /tags
-      #   icon: fa-regular fa-tags # can be empty
-      # Categories:
-      #   path: /categories
-      #   icon: fa-regular fa-folder # can be empty
+      Archives:
+        path: /archives
+        icon: fa-regular fa-archive # can be empty
+      Tags:
+        path: /tags
+        icon: fa-regular fa-tags # can be empty
+      Categories:
+        path: /categories
+        icon: fa-regular fa-folder # can be empty
       # ...... # you can add more
   # Article date format
   article_date_format: auto # auto, relative, YYYY-MM-DD, YYYY-MM-DD HH:mm:ss etc.
@@ -323,8 +326,8 @@ articles:
   # Table of contents settings
   toc:
     enable: true # Whether to enable TOC
-    max_depth: 3 # TOC depth
-    number: false # Whether to add number to TOC automatically
+    max_depth: 6 # TOC depth
+    number: true # Whether to add number to TOC automatically
     expand: true # Whether to expand TOC
     init_open: true # Open toc by default
   # Whether to enable copyright notice
@@ -338,7 +341,7 @@ articles:
   # Article recommendation. Requires nodejieba (npm install nodejieba). Transplanted from hexo-theme-volantis.
   recommendation:
     # Whether to enable article recommendation
-    enable: false
+    enable: true
     # Article recommendation title
     title: 推荐阅读
     # Max number of articles to display
@@ -346,7 +349,7 @@ articles:
     # Max number of articles to display mobile
     mobile_limit: 2
     # Placeholder image
-    placeholder: /images/wallhaven-wqery6-light.webp
+    placeholder: /images/bg.avif
     # Skip directory
     skip_dirs: []
 # ARTICLE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
@@ -358,7 +361,7 @@ comment:
   # Whether to enable comment
   enable: true
   # Comment system
-  system: waline # waline, gitalk, twikoo, giscus, utterances, artalk
+  system: giscus # waline, gitalk, twikoo, giscus, utterances, artalk
   # System configuration
   config:
     # Waline comment system. See https://waline.js.org/
@@ -383,16 +386,16 @@ comment:
       region: # Twikoo region. can be empty
     # Giscus comment system. See https://giscus.app/
     giscus:
-      repo: # Github repository name e.g. EvanNotFound/hexo-theme-redefine
-      repo_id: # Github repository id
-      category: # Github discussion category
-      category_id: # Github discussion category id
+      repo: jianyuewushuang/jianyueblog-comments # Github repository name e.g. EvanNotFound/hexo-theme-redefine
+      repo_id: R_kgDOTNo1_A # Github repository id
+      category: General # Github discussion category
+      category_id: DIC_kwDOTNo1_M4DAfiC # Github discussion category id
       mapping: pathname # Which value to use as the unique identifier for the page. e.g. pathname, url, title, og:title. DO NOT USE og:title WITH PJAX ENABLED since pjax will not update og:title when the page changes
       strict: 0 # Whether to enable strict mode. e.g. 0, 1
       reactions_enabled: 1 # Whether to enable reactions. e.g. 0, 1
       emit_metadata: 0 # Whether to emit metadata. e.g. 0, 1
-      lang: en # Giscus language. e.g. en, zh-CN, zh-TW
-      input_position: bottom # Place the comment box above/below the comments. e.g. top, bottom
+      lang: zh-CN # Giscus language. e.g. en, zh-CN, zh-TW
+      input_position: top # Place the comment box above/below the comments. e.g. top, bottom
       loading: lazy # Load the comments lazily
     # Artalk comment system. See https://artalk.js.org/
     artalk:
@@ -417,7 +420,7 @@ footer:
   # Icon in footer, write fontawesome icon code here
   icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
   # The start time of the website, format: YYYY/MM/DD HH:mm:ss
-  start: 2022/8/17 11:45:14
+  start: 2026/7/5 10:10:10
   # Site statistics
   statistics: true # show site statistics or not (total articles, total words)
   # Footer message
@@ -434,10 +437,18 @@ footer:
 # Docs: https://redefine-docs.ohevan.com/inject
 inject:
   # Whether to enable inject
-  enable: false
+  enable: true
   # Inject custom head html code
   head:
-    -
+    - <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1a384ffc7fb76f7bf51ec587e4199395";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
     -
   # Inject custom footer html code
   footer:
@@ -470,7 +481,7 @@ plugins:
       # .... you can add more audios here
   # Mermaid JS. Requires hexo-filter-mermaid-diagrams (npm i hexo-filter-mermaid-diagrams). See https://mermaid.js.org/
   mermaid:
-    enable: false # enable mermaid or not
+    enable: true # enable mermaid or not
     version: "11.4.1" # default v11.4.1
     theme:
       light: "default"
