@@ -312,7 +312,7 @@ articles:
     min2read: true # Whether to display reading time
   # Author label
   author_label:
-    enable: true # Whether to enable
+    enable: fales # Whether to enable
     auto: false # Whether to automatically add author label, e.g. Lv1, Lv2, Lv3...
     list: []
   # Code block settings
@@ -452,10 +452,10 @@ inject:
         s.parentNode.insertBefore(hm, s);
       })();
       </script>
-    -
+    - '<script>window.__effectsConfig = { particles: true, cursoreffects: true };</script>'
   # Inject custom footer html code
   footer:
-    -
+    - <script src="/js/effects-init.js"></script>
     -
 # INJECT <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
@@ -518,6 +518,17 @@ cdn:
   # The ${path} must leads to the root of the "source" folder of the theme
   custom_url:
 # CDN <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+
+# EFFECTS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Particle and cursor effects. See themes/redefine/docs/effects.md
+effects:
+  # Whether to enable particle effects (snow-like falling particles)
+  particles: true
+  # Whether to enable cursor emoji trail effects
+  cursoreffects: true
+# EFFECTS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
 
 # DEVELOPER MODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 # Docs: https://redefine-docs.ohevan.com/developer
