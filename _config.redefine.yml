@@ -186,6 +186,8 @@ home_banner:
         url:
       - icon: /images/avatar.jpg
         url:
+      - icon: https://www.gitlink.org.cn/favicon.ico
+        url: https://www.gitlink.org.cn/jianyuewushuang
     # Social links with QRcode drawers
     qrs:
       - icon: weixin
@@ -234,6 +236,7 @@ navbar:
       submenus:
         Me: /about
         Github: https://github.com/jianyuewushuang
+        Gitlink: https://www.gitlink.org.cn/jianyuewushuang
     #     Blog: https://ohevan.com
     #     Friends: /friends
     #   submenus:
@@ -316,7 +319,7 @@ articles:
     min2read: true # Whether to display reading time
   # Author label
   author_label:
-    enable: fales # Whether to enable
+    enable: false # Whether to enable
     auto: false # Whether to automatically add author label, e.g. Lv1, Lv2, Lv3...
     list: []
   # Code block settings
@@ -344,7 +347,7 @@ articles:
   # Whether to enable lazyload for images
   lazyload: true
   # Pangu.js (automatically add space between Chinese and English). See https://github.com/vinta/pangu.js
-  pangu_js: false
+  pangu_js: true
   # Article recommendation. Requires nodejieba (npm install nodejieba). Transplanted from hexo-theme-volantis.
   recommendation:
     # Whether to enable article recommendation
