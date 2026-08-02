@@ -223,6 +223,9 @@ navbar:
     Tags:
       path: /tags
       icon: fa-solid fa-tags
+    Bookmarks:
+      path: /bookmarks
+      icon: fa-solid fa-bookmark
     # Status:
     #   path: https://status.ohevan.com/
     #   icon: fa-regular fa-chart-bar
@@ -233,11 +236,6 @@ navbar:
         Github: https://github.com/jianyuewushuang
     #     Blog: https://ohevan.com
     #     Friends: /friends
-    Links:
-      icon: fa-solid fa-link
-      Bookmarks:
-        path: /bookmarks
-        icon: fa-solid fa-bookmark
     #   submenus:
     #     Link1: /link1
     #     Link2: /link2
@@ -272,6 +270,9 @@ home:
       Categories:
         path: /categories
         icon: fa-regular fa-folder # can be empty
+      Bookmarks:
+        path: /bookmarks
+        icon: fa-regular fa-bookmark
       # ...... # you can add more
   # Article date format
   article_date_format: auto # auto, relative, YYYY-MM-DD, YYYY-MM-DD HH:mm:ss etc.
