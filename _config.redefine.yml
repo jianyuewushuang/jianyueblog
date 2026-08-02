@@ -171,20 +171,20 @@ home_banner:
   # Home banner social links
   social_links:
     # Whether to enable
-    enable: false
+    enable: true
     # Social links style
     style: default # default, reverse, center
     # Social links
     links:
       - icon: github # can also be "fa-brands fa-github"
-        url:
+        url: https://github.com/jianyuewushuang
       - icon: twitter
         url:
       - icon: email
-        url: you@example.com
+        url: jianyuewushuang@163.com
       - icon: telegram
         url:
-      - icon: /images/custom-icon.svg
+      - icon: /images/avatar.jpg
         url:
     # Social links with QRcode drawers
     qrs:
@@ -230,7 +230,7 @@ navbar:
       icon: fa-solid fa-user
       submenus:
         Me: /about
-        Github: https://github.com/jianyuewushuang/jianyueblog
+        Github: https://github.com/jianyuewushuang
     #     Blog: https://ohevan.com
     #     Friends: /friends
     # Links:
