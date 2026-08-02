@@ -1,7 +1,9 @@
 ---
 title: mermaid技术文档
 date: 2026-07-05
-tags: 技术文档
+categories: 技术文档
+tags:
+  - mermaid
 ---
 
 [官方文档](https://docs.mermaidviewer.com/zh/) [官方平台](https://mermaidviewer.com/)

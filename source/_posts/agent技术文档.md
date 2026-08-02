@@ -1,7 +1,13 @@
 ---
 title: agent使用文档
 date: 2026-07-25
-tags: 技术文档
+categories: 技术文档
+tags:
+  - agent
+  - api
+  - linux
+  - tui
+  - ai
 ---
 
 > api
@@ -11,6 +17,14 @@ tags: 技术文档
 > - [openrouter](https://openrouter.ai/workspaces/default/keys)
 > - [langrouter](https://langrouter.ai/)(有按分钟限流的免费模型)
 > - [xiaomi](https://platform.xiaomimimo.com/console/api-keys)(tts系列大模型限时免费)
+> - [魔搭社区](https://modelscope.cn/my/access/token)(每日免费调用很多模型)
+> - [NVIDIA](https://build.nvidia.com/settings/api-keys)(大量免费模型)
+> - cloudflare Workers Ai(每日10,000 Neurons) [创建](https://dash.cloudflare.com/550872c4009c042afb8726ab10aab08b/ai/workers-ai/api-quick-start) [管理](https://dash.cloudflare.com/profile/api-tokens)
+> - [商汤日日新](https://platform.sensenova.cn/console/keys)(按小时限流)
+>
+> 联网搜索
+>
+> - [阿里云百炼websearch](https://bailian.console.aliyun.com/cn-beijing/?tab=app&spm=0.0.0.i2#/mcp-market/detail/WebSearch)
 
 ## opencode
 
@@ -89,9 +103,77 @@ opencode /项目路径
 >     pic.png
 > ```
 
+### 联网搜索
+
+在`~/.config/opencode/opencode.jsonc`中写入：
+
+```jsonc
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "grep": "allow",
+    "glob": "allow",
+    "todowrite": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "question": "allow"
+  }
+}
+```
+
+**如果用的不是opencode提供商，需要启动`OPENCODE_ENABLE_EXA`环境变量：**
+
+- 单次命令生效：`OPENCODE_ENABLE_EXA=1 opencode`
+- 当前终端会话生效：
+
+```bash
+export OPENCODE_ENABLE_EXA=1
+opencode
+```
+
+- 全局永久生效：
+    1. bash:在`~/.bashrc`文件末尾添加`export OPENCODE_ENABLE_EXA=1`，`source ~/.bashrc`。
+    2. zsh:在`~/.zshrc`文件末尾添加`export OPENCODE_ENABLE_EXA=1`，`source ~/.zshrc`。
+    3. fish:在`nano ~/.config/fish/config.fish`文件末尾添加`set -gx OPENCODE_ENABLE_EXA 1`，`source ~/.config/fish/config.fish`。
+
+### oh my openagent
+
+opencode全能插件
+
+[官网](https://omo.dev/zh) [官方文档](https://omo.dev/zh/docs) [github](https://github.com/code-yeongyu/oh-my-openagent) [菜鸟教程](https://www.runoob.com/opencode/opencode-oh-my-openagent.html)
+
+#### 安装
+
+> 需先安装opencode和bun
+
+`bunx oh-my-openagent install`
+
+检查安装:执行`/status`，查看`plugin`
+
+#### 使用
+
+ultrawork <任务>
+
+> **关闭遥测：**
+> 在`～/.config/opencode/oh-my-openagent.json`中添加：
+>
+> ```json
+> {
+>   "teletry": false
+> }
+> ```
+
+##### ultrawork
+
+##### Prometheus
+
+架构师。与你访谈，探索代码库，并创建详细的执行计划。从不写代码。使用 Metis 和 Momus 作为质量关卡。
+
+##### Atlas
+
 ## kilo code
 
-[官网](https://kilo.ai/) [官方文档](https://kilo.ai/docs/)
+[官网](https://kilo.ai/) [官方文档](https://kilo.ai/docs/) [菜鸟教程](https://www.runoob.com/vibe-coding/kilo-code-usage.html)
 
 [官方文档之一](../不是我写的/kilocode技术文档.md)
 
@@ -122,7 +204,7 @@ opencode /项目路径
 
 pi agent的fork版本，全面改良了pi。
 
-[官网](https://omp.sh/) [官方文档](https://omp.sh/docs)
+[官网](https://omp.sh/) [官方文档](https://omp.sh/docs) [github](https://github.com/can1357/oh-my-pi) [菜鸟教程](https://www.runoob.com/vibe-coding/omp-usage.html)
 
 ### 安装
 
@@ -131,6 +213,8 @@ pi agent的fork版本，全面改良了pi。
 `curl -fsSL https://omp.sh/install | sh`
 
 ### 使用
+
+开箱即用的联网功能。
 
 `omp`
 
@@ -182,9 +266,25 @@ sudo apt update && sudo apt install crush
 
 [官网](https://deepcode.vegamo.cn/)
 
-## deepseek-tui
+## codewhale
 
-[官网](https://deepseek-tui.org/zh/)
+[中文官网](https://codewhale.net/zh) [英文官网](https://www.codewhale.ai/) [官方文档](https://codewhale.net/zh/docs) [github](https://github.com/Hmbown/CodeWhale)
+
+### 安装
+
+```bash
+npm install -g codewhale
+curl -fsSL https://codewhale.net/install.sh | sh
+```
+
+### 使用
+
+```bash
+codewhale auth set --provider deepseek   # or export ANTHROPIC_API_KEY, etc.
+codewhale                                # open the TUI
+codewhale exec "fix the failing test"    # headless
+codewhale web                            # local browser client on 127.0.0.1
+```
 
 ## Langcli
 
@@ -200,7 +300,7 @@ sudo apt update && sudo apt install crush
 
 只能用deepseek，但很省token。
 
-[官网](https://reasonix.io/) [官方文档](https://reasonix.cn/guide/)
+[官网](https://reasonix.io/) [官方文档](https://reasonix.cn/guide/) [菜鸟教程](https://www.runoob.com/vibe-coding/reasonix-usage.html)
 
 ### 安装
 
@@ -229,9 +329,9 @@ reasonix server
 
 ## mimo code
 
-小米在opencode基础上开发的，有限时免费模型。
+小米在opencode基础上开发的，有限时免费模型。自带联网搜索功能。（需配置）
 
-[好看的官网](https://mimo.xiaomi.com/coder)
+[好看的官网](https://mimo.xiaomi.com/coder) [官方文档](https://mimo.xiaomi.com/zh/mimocode/start)
 
 ### 安装
 
@@ -243,6 +343,24 @@ reasonix server
 
 > 有很多实用的中文命令。
 > 切换到compose agent进行复杂工程。
+
+### 联网搜索
+
+在`～/.config/mimocode/mimocode.jsonc`中写入：
+
+```jsonc
+{
+  "$schema": "https://mimo.xiaomi.com/mimocode/config.json",
+  "permission": {
+    "grep": "allow",
+    "glob": "allow",
+    "todowrite": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "question": "allow"
+  }
+}
+```
 
 ## cline
 
@@ -305,3 +423,54 @@ pnpm tools-dev
 ### 使用
 
 图形化界面
+
+## 手机agent
+
+### PokeClaw
+
+可本地部署大模型离线使用
+
+[官网](https://agents-io.github.io/PokeClaw/)
+
+### operit
+
+可本地部署大模型离线使用
+
+[官网](https://operit.app/) [官方文档](https://operit.app/#/guide/new)
+
+### X-OmniClaw
+
+OPPO开源的手机agent,OPPO手机可以调用摄像头。
+
+[github](https://github.com/OPPO-Mente-Lab/X-OmniClaw)
+
+### hermes app
+
+[github](https://github.com/SelectXn00b/HermesApp)
+
+### zoo code
+
+vscode扩展
+
+[官网](https://www.zoocode.dev/) [官方文档](https://docs.zoocode.dev/)
+
+## zeroclaw
+
+openclaw的rust替代，性能强，安全性高，资源占用低。可部署在单片机上。
+
+[官网](https://www.zeroclawlabs.ai/) [官方文档](https://docs.zeroclawlabs.ai/v0.8.3/zh-CN/) [github](https://github.com/zeroclaw-labs/zeroclaw)
+
+### 安装
+
+`curl -fsSL https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/install.sh | bash`
+
+### 使用
+
+```bash
+# 命令行界面
+zeroclaw quickstart
+# web网关
+zeroclaw daemon
+# 终端界面
+zerocode
+```

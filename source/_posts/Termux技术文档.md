@@ -1,7 +1,10 @@
 ---
 title: Termux技术文档
 date: 2026-07-05
-tags: 技术文档
+categories: 技术文档
+tags:
+  - android
+  - termux
 ---
 
 Termux是一个终端模拟器与Linux环境模拟器，可以用来在手机上运行linux系统。

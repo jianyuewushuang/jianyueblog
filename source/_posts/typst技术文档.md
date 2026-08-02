@@ -1,7 +1,9 @@
 ---
 title: typst技术文档
 date: 2026-07-05
-tags: 技术文档
+categories: 技术文档
+tags:
+  - typst
 ---
 
 ## 安装

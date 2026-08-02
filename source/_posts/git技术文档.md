@@ -1,7 +1,10 @@
 ---
 title: git技术文档
 date: 2026-07-05
-tags: 技术文档
+categories: 技术文档
+tags:
+  - git
+  - linux
 ---
 
 [菜鸟教程](https://www.runoob.com/git/git-tutorial.html)
@@ -66,6 +69,13 @@ git branch -D <branch>
 git push origin :<branch>
 ```
 
+#### 修改分支名
+
+```bash
+# 先切换到需要修改分支名的分支
+git checkout -m <newBranchName>
+```
+
 #### 其他分支管理命令
 
 ```bash
@@ -96,6 +106,8 @@ git stash clear
 更改当前分支的提交历史，重置当前分支到特定提交
 
 ```bash
+# 最佳实践
+git reset HEAD^
 #只重置 HEAD 到指定的提交，暂存区和工作目录保持不变
 git reset --soft <commit>
 #重置 HEAD 到指定的提交，暂存区重置，但工作目录保持不变(默认)
@@ -109,8 +121,9 @@ git reset --hard <commit>
 创建一个新的提交，用来撤销指定的提交，它不会改变提交历史，适用于已经推送到远程仓库的提交
 
 ```bash
-git revert <commit>
+# 最佳实践
 git revert HEAD
+git revert <commit>
 ```
 
 ### 图形化命令
@@ -206,6 +219,17 @@ git clone repo.bundle
 git clone --mirror
 ```
 
+### 删除提交历史
+
+```bash
+# 安装git-filter-repo
+sudo apt install git-filter-repo
+# 删除dist/目录提交历史
+git filter-repo --path dist/ --invert-paths --force
+# 删除appimage
+git filter-repo --path hello.appimage --invert-paths --force
+```
+
 ### 其他本地命令
 
 ```bash
@@ -234,6 +258,8 @@ git remote set-url origin https://jihulab.com/jianyuewushuang/technicaldocumenta
 
 #绑定远程仓库
 git remote add origin https://jihulab.com/jianyuewushuang/technicaldocumentation.git
+# 首次拉取远程分支
+git pull origin main
 #首次推送绑定分支
 git push -u origin main
 #单独绑定
@@ -243,6 +269,7 @@ git branch --set-upstream-to=origin/main main
 ### 拉取
 
 ```bash
+# 第一次拉取或拉取失败时
 git pull origin main --rebase
 #有新文件
 git pull origin main --allow-unrelated-histories

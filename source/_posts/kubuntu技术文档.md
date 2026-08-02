@@ -1,7 +1,11 @@
 ---
 title: kubuntu技术文档
 date: 2026-07-05
-tags: 技术文档
+categories: 技术文档
+tags:
+  - kubuntu
+  - btrfs
+  - linux
 ---
 
 ## 安装btrfs格式的kubuntu
@@ -387,6 +391,8 @@ sudo apt update
 sudo apt install code -y
 ```
 
+更新vscode：[豆包](https://www.doubao.com/thread/wa4d84c040d375b4d)
+
 ### Syncthing
 
 [官网提供的下载和更新方法](https://apt.syncthing.net/)
@@ -505,7 +511,7 @@ nvim --version
 
 ### stm32cubeide
 
-[安装教程](../resources/Deepin_系统下_STM32CubeIDE_完整安装教程.md)
+[豆包](../resources/Deepin_系统下_STM32CubeIDE_完整安装教程.md)
 
 ### 百度网盘
 
@@ -757,6 +763,41 @@ Categories=Network;WebBrowser;
 
 在桌面找到这个文件，右键打开**属性**，勾选**允许以程序执行**
 
+### cloude code
+
+#### desktop
+
+```bash
+# 下载deb安装包
+curl -fLO "https://downloads.claude.ai/claude-desktop/apt/stable/$(curl -s "https://downloads.claude.ai/claude-desktop/apt/stable/dists/stable/main/binary-$(dpkg --print-architecture)/Packages" | grep '^Filename: pool/main/c/claude-desktop/claude-desktop_' | sort -V | tail -n 1 | cut -d' ' -f2)"
+sudo apt install ./claude-desktop_*.deb
+```
+
+### chafa
+
+在终端中用ANSI协议渲染图片。
+
+```bash
+sudo apt install chafa -y
+chafa test.png
+# 纯ANSI字符画输出
+chafa --format ansi test.png
+```
+
+### zed
+
+用rust编写的高性能ai友好型编辑器。
+
+[官网](https://zed.dev/) [官方文档](https://zed.dev/docs/)
+
+```bash
+curl -f https://zed.dev/install.sh | sh
+# 打开当前目录
+zed .
+# 卸载
+zed --uninstall
+```
+
 ## 卸载应用程序
 
 保留配置文件：`sudo apt remove 包名`
@@ -787,7 +828,11 @@ dpkg -S 命令名
 
 ### c语言
 
+[豆包](https://www.doubao.com/thread/wb135a60b45740966)
+
 ### python
+
+[豆包](https://www.doubao.com/thread/w6a0de5e0f6dd0b6c)
 
 ### nodejs
 
@@ -805,30 +850,46 @@ nvm install --lts
 # 安装yarn和hexo
 npm install -g yarn
 npm install -g hexo-cli
+# 安装pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 ```
 
-## *特别栏目：把markdown转为pdf*
+### rust
 
-### 网页工具
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+. "$HOME/.cargo/env"            # For sh/bash/zsh/ash/dash/pdksh
+source "$HOME/.cargo/env.fish"  # For fish
+source "~/.cargo/env.nu"  # For nushell
+source "$HOME/.cargo/env.tcsh"  # For tcsh
+. "$HOME/.cargo/env.ps1"        # For pwsh
+source "$HOME/.cargo/env.xsh"   # For xonsh
+```
+
+## 其他
+
+### *特别栏目：把markdown转为pdf*
+
+#### 网页工具
 
 [md-to.com](https://md-to.com/zh-cn/)
 
-### 用浏览器插件
+#### 用浏览器插件
 
 [MarkView](https://getmarkview.com/)
 
 用浏览器打开markdown文件之后用浏览器另存为pdf
 
-### vscode中的markdown preview enhenced(MPE)插件
+#### vscode中的markdown preview enhenced(MPE)插件
 
-#### 用浏览器转换(最佳实践)
+##### 用浏览器转换(最佳实践)
 
 1. 打开设置
 2. 搜索`markdown-preview-enhanced.chromePath`
 3. 把路径改为`/usr/bin/microsoft-edge-stable`
 4. 打开MPE预览,右键预览,点Export->Chrome(Puppeteer)->PDF
 
-#### 用PrinceXML转换
+##### 用PrinceXML转换
 
 1. 从[下载页面](https://www.princexml.com/download/)下载Debian 12版本
 2. 进入安装包所在目录进行安装`sudo dpkg -i prince_16.2-1_debian12_amd64.deb`
@@ -845,7 +906,7 @@ npm install -g hexo-cli
 > prince chapter1.html chapter2.html chapter3.html -o book.pdf
 > ```
 
-### pandoc+wkhtmltopdf(自动化方案)
+#### pandoc+wkhtmltopdf(自动化方案)
 
 1. `sudo apt install pandoc` `sudo apt install wkhtmltopdf`
 2. `pandoc input.md -o output.pdf --pdf-engine=wkhtmltopdf`
@@ -864,9 +925,9 @@ npm install -g hexo-cli
 > wkhtmltopdf --page-size A4 --margin-top 20mm --margin-bottom 20mm input.html > output.pdf
 > ```
 
-## 安装其他桌面
+### 安装其他桌面
 
-### niri和dms
+#### niri和dms
 
 ```bash
 # 添加 Niri 官方软件源
@@ -901,3 +962,7 @@ rm -rf ~/.config/dms
 systemctl --user disable --now dms 2>/dev/null
 systemctl --user reset-failed 2>/dev/null
 ```
+
+### 生成随机字符串
+
+`openssl rand -hex 32`

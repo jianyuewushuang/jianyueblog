@@ -1,9 +1,12 @@
 ---
 date: 2026-07-30
 title: WSL2技术文档
-tags: 
-  - 转载
-  - 技术文档
+categories: 技术文档
+tags:
+  - wsl2
+  - linux
+  - windows
+  - 虚拟机
 ---
 
 WSL2是Windows Subsystem for Linux的第二代版本。它允许你在Windows操作系统内原生运行Linux发行版（如Ubuntu、Debian等），无需传统的虚拟机或双系统启动。
@@ -160,5 +163,3 @@ WSL2使用动态扩展的虚拟硬盘（VHDX文件），具有以下特点：
 ## 总结建议
 
 对于大多数用户，**建议预留40-100GB空间**作为起点。如果只是体验Linux基础功能，10GB可能足够；但如果是专业开发或需要运行容器，建议直接预留100GB以上，避免后续空间不足的麻烦。
-
-> 原作者未知
