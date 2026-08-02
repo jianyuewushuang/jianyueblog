@@ -1,6 +1,6 @@
 ---
 title: LaTeX技术文档
-date: 2026-07-05
+date: 2026-06-06
 categories: 技术文档
 tags:
   - LaTeX

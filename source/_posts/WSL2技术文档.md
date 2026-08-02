@@ -1,6 +1,6 @@
 ---
-date: 2026-07-30
 title: WSL2技术文档
+date: 2026-06-06
 categories: 技术文档
 tags:
   - wsl2
