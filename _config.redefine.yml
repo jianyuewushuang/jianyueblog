@@ -233,8 +233,11 @@ navbar:
         Github: https://github.com/jianyuewushuang
     #     Blog: https://ohevan.com
     #     Friends: /friends
-    # Links:
-    #   icon: fa-regular fa-link
+    Links:
+      icon: fa-solid fa-link
+      Bookmarks:
+        path: /bookmarks
+        icon: fa-solid fa-bookmark
     #   submenus:
     #     Link1: /link1
     #     Link2: /link2
@@ -503,6 +506,8 @@ page_templates:
   masonry:
     batch_size: 12
     initial_batch_size: 24
+  page_templates:
+    bookmarks_column: 2
 # PAGE TEMPLATES <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
