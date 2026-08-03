@@ -5,6 +5,7 @@ categories: 技术文档
 tags:
   - git
   - linux
+password: 123456
 ---
 
 [菜鸟教程](https://www.runoob.com/git/git-tutorial.html)

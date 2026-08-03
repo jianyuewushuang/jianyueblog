@@ -251,7 +251,8 @@ export function initHBE() {
   }
 
   function hbeLoader() {
-    const oldStorageData = JSON.parse(storage.getItem(storageName));
+    const storedData = storage.getItem(storageName);
+    const oldStorageData = storedData ? JSON.parse(storedData) : null;
 
     if (oldStorageData) {
       console.log(
