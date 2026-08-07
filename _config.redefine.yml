@@ -176,12 +176,12 @@ home_banner:
     style: default # default, reverse, center
     # Social links
     links:
+      - icon: email
+        url: jianyuewushuang@163.com
       - icon: github # can also be "fa-brands fa-github"
         url: https://github.com/jianyuewushuang
       - icon: twitter
         url:
-      - icon: email
-        url: jianyuewushuang@163.com
       - icon: telegram
         url:
       - icon: /images/avatar.jpg
