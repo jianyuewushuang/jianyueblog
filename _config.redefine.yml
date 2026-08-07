@@ -337,7 +337,7 @@ articles:
   toc:
     enable: true # Whether to enable TOC
     max_depth: 6 # TOC depth
-    number: true # Whether to add number to TOC automatically
+    number: false # Whether to add number to TOC automatically
     expand: true # Whether to expand TOC
     init_open: true # Open toc by default
   # Whether to enable copyright notice

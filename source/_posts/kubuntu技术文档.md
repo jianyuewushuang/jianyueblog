@@ -866,6 +866,60 @@ source "$HOME/.cargo/env.tcsh"  # For tcsh
 source "$HOME/.cargo/env.xsh"   # For xonsh
 ```
 
+## 包管理器
+
+### brew
+
+mac os的包管理器。
+
+#### 安装
+
+```bash
+# 安装前置依赖
+sudo apt update
+sudo apt install build-essential procps curl file git
+# 执行官方安装脚本（脚本会把 brew 安装到：/home/linuxbrew/.linuxbrew）（需要翻墙）
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# 配置环境变量
+# bash
+echo >> /home/jianyuelinux/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+source ~/.bashrc
+# zsh
+echo >> /home/jianyuelinux/.zshrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"' >> /home/jianyuelinux/.zshrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+# 安装验证
+brew --version
+# brew doctor 会检查你的 brew 环境是否存在问题
+brew doctor
+```
+
+brew 安装的软件实际存放位置
+
+- 真正程序：`/home/linuxbrew/.linuxbrew/Cellar/软件名/版本号/bin/`
+- 软链接（PATH 调用）：`/home/linuxbrew/.linuxbrew/bin/`
+
+#### 使用
+
+```bash
+# 更新brew软件源
+brew update
+# 搜索软件（比如walk）
+brew search walk
+# 安装软件
+brew tap antonmedv/tap   # 添加第三方仓库
+brew install walk
+# 升级软件
+brew upgrade walk
+# 卸载软件
+brew uninstall walk
+# 查看已安装包
+brew list
+# 查看brew安装路径
+brew --prefix
+```
+
 ## 其他
 
 ### *特别栏目：把markdown转为pdf*
