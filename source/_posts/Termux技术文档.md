@@ -5,6 +5,7 @@ categories: 技术文档
 tags:
   - android
   - termux
+excerpt: false
 ---
 
 Termux是一个终端模拟器与Linux环境模拟器，可以用来在手机上运行linux系统。

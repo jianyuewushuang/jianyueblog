@@ -4,6 +4,7 @@ date: 2026-06-06
 categories: 技术文档
 tags:
   - typst
+excerpt: false
 ---
 
 ## 安装

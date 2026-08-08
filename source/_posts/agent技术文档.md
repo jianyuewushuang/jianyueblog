@@ -8,6 +8,7 @@ tags:
   - linux
   - tui
   - ai
+excerpt: false
 ---
 
 > api

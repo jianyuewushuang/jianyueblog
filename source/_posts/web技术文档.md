@@ -8,6 +8,7 @@ tags:
   - node.js
   - linux
   - hexo
+excerpt: false
 ---
 
 ## 开发环境

@@ -2,6 +2,7 @@
 title: pandoc技术文档
 date: 2026-06-06
 categories: 技术文档
+excerpt: false
 ---
 
 ## 基础转换

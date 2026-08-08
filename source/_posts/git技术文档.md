@@ -5,6 +5,7 @@ categories: 技术文档
 tags:
   - git
   - linux
+excerpt: false
 ---
 
 [菜鸟教程](https://www.runoob.com/git/git-tutorial.html)

@@ -4,6 +4,7 @@ date: 2026-06-06
 categories: 技术文档
 tags:
   - mermaid
+excerpt: false
 ---
 
 [官方文档](https://docs.mermaidviewer.com/zh/) [官方平台](https://mermaidviewer.com/)

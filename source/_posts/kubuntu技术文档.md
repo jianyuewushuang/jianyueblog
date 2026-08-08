@@ -6,6 +6,7 @@ tags:
   - kubuntu
   - btrfs
   - linux
+excerpt: false
 ---
 
 ## 安装btrfs格式的kubuntu

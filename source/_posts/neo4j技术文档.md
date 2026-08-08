@@ -5,6 +5,7 @@ categories: 技术文档
 tags:
   - neo4j
   - linux
+excerpt: false
 ---
 
 ## 安装

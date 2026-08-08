@@ -5,6 +5,7 @@ categories: 技术文档
 tags:
   - linux
   - 终端
+excerpt: false
 ---
 
 [toc]
