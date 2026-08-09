@@ -7,7 +7,6 @@ tags:
   - linux
   - windows
   - 虚拟机
-excerpt: false
 ---
 
 WSL2是Windows Subsystem for Linux的第二代版本。它允许你在Windows操作系统内原生运行Linux发行版（如Ubuntu、Debian等），无需传统的虚拟机或双系统启动。
