@@ -1,6 +1,6 @@
 ---
 title: kubuntu技术文档
-date: 2026-06-19
+date: 2026-06-16
 categories: 技术文档
 tags:
   - kubuntu
