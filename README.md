@@ -86,4 +86,4 @@ License: PolyForm Noncommercial License 1.0.0
 2. 不同协议适用范围严格区分，协议之间互不覆盖。
 3. 静态网站编译输出的 HTML、页面资源不属于源代码分发范围，本仓库协议仅约束仓库源码文件。
 
-三份协议全文见 [LICENSE/](LICENSE) 目录。
+三份协议全文见 [LICENSES/](LICENSES) 目录。
