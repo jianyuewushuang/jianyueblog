@@ -71,8 +71,6 @@ Walk — a terminal navigator; a cd and ls replacement.
 
 Run lk, navigate using arrows or hjkl. Press, esc to jump to a new location; or ctrl+c to stay.
 
-> 实测无法跳转
-
 ```bash
 # 安装
 # 使用brew包管理器（未成功运行）
@@ -82,6 +80,47 @@ curl https://raw.githubusercontent.com/antonmedv/walk/master/install.sh | sh
 # 使用
 walk
 ```
+
+Put the next function into the **.bashrc** or a similar config:
+
+<table>
+<tr>
+  <th> Bash/Zsh </th>
+  <th> Fish </th>
+  <th> PowerShell </th>
+</tr>
+<tr>
+<td>
+
+```bash
+function lk {
+  cd "$(walk "$@")"
+}
+```
+
+</td>
+<td>
+
+```fish
+function lk
+  set loc (walk $argv); and cd $loc;
+end
+```
+
+</td>
+<td>
+
+```powershell
+function lk() {
+  cd $(walk $args)
+}
+```
+
+</td>
+</tr>
+</table>
+
+Now use `lk` command to start walking.
 
 ### Yazi
 
