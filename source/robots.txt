@@ -1,0 +1,7 @@
+# robots.txt for https://blog.jianyuewushuang.top
+# Allow all crawlers
+
+User-agent: *
+Allow: /
+
+Sitemap: https://blog.jianyuewushuang.top/sitemap.xml

@@ -98,6 +98,11 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: redefine
 
+# Sitemap
+sitemap:
+  path: sitemap.xml
+  rel: false
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
