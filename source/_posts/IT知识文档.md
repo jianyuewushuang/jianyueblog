@@ -1015,4 +1015,4 @@ Sun（1982–2009）创造 Solaris/ZFS/Java/SPARC → 2005 开源 Solaris 为 Op
 - **完整专利授权+报复（最安全）**：Apache2.0、GPLv3、CDDL、MPL2.0、APSL 2.0 —— 自动授权+起诉贡献者则授权失效。
 - **仅非商用专利授权**：PolyForm Noncommercial —— 商用场景无专利保护，须购商业许可。
 
-> 本文借助AI整理而成。
+> *本文借助AI整理而成。*
