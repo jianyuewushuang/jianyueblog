@@ -4,6 +4,11 @@
 
 在线站点：<https://blog.jianyuewushuang.top>
 
+开源仓库：
+
+- github: [https://github.com/jianyuewushuang/jianyueblog](https://github.com/jianyuewushuang/jianyueblog)
+- gitlink: [https://gitlink.org.cn/jianyuewushuang/jianyueblog](https://gitlink.org.cn/jianyuewushuang/jianyueblog)（国内访问友好）
+
 ## 功能特性
 
 - **Redefine 主题** —— 深色模式默认、紫蓝主色、单页（swup）体验
