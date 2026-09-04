@@ -225,7 +225,7 @@ navbar:
     Tags:
       path: /tags
       icon: fa-solid fa-tags
-    随笔:
+    Essays:
       path: /essays
       icon: fa-solid fa-pen-nib
     Bookmarks:
