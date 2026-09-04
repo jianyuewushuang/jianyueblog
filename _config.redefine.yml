@@ -417,7 +417,7 @@ comment:
       reactions_enabled: 1 # Whether to enable reactions. e.g. 0, 1
       emit_metadata: 0 # Whether to emit metadata. e.g. 0, 1
       lang: zh-CN # Giscus language. e.g. en, zh-CN, zh-TW
-      input_position: top # Place the comment box above/below the comments. e.g. top, bottom
+      input_position: bottom # Place the comment box above/below the comments. e.g. top, bottom
       loading: lazy # Load the comments lazily
     # Artalk comment system. See https://artalk.js.org/
     artalk:
