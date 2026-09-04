@@ -225,6 +225,9 @@ navbar:
     Tags:
       path: /tags
       icon: fa-solid fa-tags
+    随笔:
+      path: /essays
+      icon: fa-solid fa-pen-nib
     Bookmarks:
       path: /bookmarks
       icon: fa-solid fa-bookmark
@@ -273,6 +276,9 @@ home:
       Categories:
         path: /categories
         icon: fa-regular fa-folder # can be empty
+      Essays:
+        path: /essays
+        icon: fa-regular fa-pen-nib
       Bookmarks:
         path: /bookmarks
         icon: fa-regular fa-bookmark
