@@ -29,10 +29,6 @@
   title: 兰博基尼
   description: 比赛没赢过，把妹没输过。
 
-- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260823_210655.avif
-  title: 本田
-  description: 依旧对味儿
-
 - image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260823_225644.avif
   title: 伞
   description: 很有设计感
@@ -98,3 +94,53 @@
 
 - image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/mmexport1787530589788.avif
   title: Graffiti
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260502_161422.avif
+  title: 泰山顶上的信号台
+  description: 僵尸看了都说好
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260502_161721.avif
+  title: 泰山天街
+  description: 阴间调色造就鬼门奇观
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260503_093949.avif
+  title: 无形的大手
+  description: 好久没玩手影了
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260503_172217.avif
+  title: 青岛的海
+  description: 平静而又灵动
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260715_193846.avif
+  title: 对称的楼
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260719_181114.avif
+  title: 黑天鹅
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260719_181413.avif
+  title: 染布
+  description: 诗兴大发
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260719_181600.avif
+  title: 古朴的午后
+  description: 藤椅草伞，好不惬意
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260719_181748.avif
+  title: 城市绿洲
+  description: 喧嚣中的片刻宁静
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260719_210620.avif
+  title: 大疆mini
+  description: 这个桨叶一看就很气动
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260723_173027.avif
+  title: 活泼的春联
+  description: 难道这就是传说中的拙书吗？真是百闻不如一见。
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260730_165414.avif
+  title: 小无人机
+  description: 我还给这无人机的飞控代码提过PR呢。别看它小，我训练了那么久都得适应一下才能飞起来。
+
+- image: https://pub-e5eabaa790184763a8e5c91bd0ef69a0.r2.dev/jianyueblog-masonry/IMG_20260816_113936.avif
+  title: 躲雨的猫
+  description: 这猫很智能啊！
