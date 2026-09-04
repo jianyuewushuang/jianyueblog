@@ -228,6 +228,9 @@ navbar:
     Essays:
       path: /essays
       icon: fa-solid fa-pen-nib
+    Masonry:
+      path: /masonry
+      icon: fa-solid fa-image
     Bookmarks:
       path: /bookmarks
       icon: fa-solid fa-bookmark
@@ -279,6 +282,9 @@ home:
       Essays:
         path: /essays
         icon: fa-regular fa-pen-nib
+      Masonry:
+        path: /masonry
+        icon: fa-regular fa-image
       Bookmarks:
         path: /bookmarks
         icon: fa-regular fa-bookmark
