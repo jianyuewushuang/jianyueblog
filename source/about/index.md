@@ -9,19 +9,20 @@ date: 2026-08-01 13:46:43
 
 个人邮箱：<jianyuewushuang@163.com>
 
-<hr >
+<hr>
 
 ### examples
 
-- linux系统使用
+- linux系统
 - 飞控开发
-- 单片机应用
-- 网页制作
 - 建模与仿真
+- 开源项目贡献者和拥有者
+- CAAC超视距多旋翼无人机机长
+- 2025爱越野崇礼越野赛15公里组别第4名
 
 > [一个用来管理markdown日记的桌面应用](https://github.com/jianyuewushuang/cyber-diary)
 
-<hr >
+<hr>
 
 ### 博客技术栈
 
