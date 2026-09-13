@@ -48,7 +48,7 @@ git clone https://github.com/Wandmalfarbe/pandoc-latex-template.git
 按照README写好markdown文件后执行转换命令：
 
 ```bash
-pandoc "document.md" -o "document.pdf" --from markdown --template "../../dist/eisvogel.latex" --syntax-highlighting idiomatic --pdf-engine "xelatex" -V CJKmainfont="SimSun"
+pandoc "document.md" -o "document.pdf" --from gfm+alerts --template "../../dist/eisvogel.latex" --syntax-highlighting idiomatic --pdf-engine "xelatex" -V CJKmainfont="SimSun" --lua-filter "./resources/alerts.lua"
 ```
 
 循环转换命令（windows）：
@@ -61,11 +61,12 @@ Get-ChildItem -Path "./src" -Filter "*.md" | ForEach-Object {
     $outputFile = Join-Path "./build" ($_.BaseName + ".pdf")
     pandoc $inputFile `
         -o $outputFile `
-        --from markdown `
+        --from gfm+alerts `
         --template "./resources/latex/eisvogel.latex" `
         --syntax-highlighting idiomatic `
         --pdf-engine "xelatex" `
-        -V CJKmainfont="SimSun"
+        -V CJKmainfont="SimSun"`
+        --lua-filter "./resources/alerts.lua"
 }
 ```
 
@@ -81,11 +82,23 @@ keywords: [关键词, markdown]
 subtitle: "副标题"
 titlepage: true,
 titlepage-rule-color: "360049"
-titlepage-background: "绝对路径"
-page-background: "绝对路径"
+titlepage-background: "C:/Users/jianyuewushuang/document/学习/学习科目/大二上/概率论/笔记/resources/background.pdf"
+page-background: "C:/Users/jianyuewushuang/document/学习/学习科目/大二上/概率论/笔记/resources/background.pdf"
+colorlinks: true
+toc: true
+toc-own-page: true
 ---
 
 ## 二级标题
 
 正文
+
+- 无序列表
+- 无序列表
+
+1. 有序列表
+2. 有序列表
+
+> [!CAUTION]
+> 引用
 ```
