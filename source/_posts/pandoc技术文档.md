@@ -61,7 +61,7 @@ Get-ChildItem -Path "./src" -Filter "*.md" | ForEach-Object {
     $outputFile = Join-Path "./build" ($_.BaseName + ".pdf")
     pandoc $inputFile `
         -o $outputFile `
-        --from gfm+alerts `
+        --from markdown+alerts `
         --template "./resources/latex/eisvogel.latex" `
         --syntax-highlighting idiomatic `
         --pdf-engine "xelatex" `
