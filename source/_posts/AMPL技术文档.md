@@ -84,7 +84,7 @@ python -m amplpy.modules install highs cbc
 
 创建`model.mod`,`data.dat`,`run.py`文件，在`run.py`中写入：
 
-```py
+```python
 from amplpy import AMPL
 ampl = AMPL()
 ampl.read("model.mod")
@@ -118,7 +118,7 @@ display x1,x2,x3;
 
 > 在python中也可直接编写并运行AMPL：
 >
-> ```py
+> ```python
 > from amplpy import AMPL
 > ampl = AMPL()
 > ampl.eval("""
