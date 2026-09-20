@@ -5,7 +5,6 @@ categories: 技术文档
 tags:
   - git
   - linux
-excerpt: false
 ---
 
 [菜鸟教程](https://www.runoob.com/git/git-tutorial.html)
@@ -109,6 +108,7 @@ git stash clear
 ```bash
 # 最佳实践
 git reset HEAD^
+git reset --soft HEAD~1
 #只重置 HEAD 到指定的提交，暂存区和工作目录保持不变
 git reset --soft <commit>
 #重置 HEAD 到指定的提交，暂存区重置，但工作目录保持不变(默认)
@@ -234,17 +234,19 @@ git filter-repo --path hello.appimage --invert-paths --force
 ### 其他本地命令
 
 ```bash
-#修改上一次提交的注释
+# 修改上一次提交的注释
 git commit --amend -m "This is the correct message"
-#修改分支名
+# 把本次暂存区合并进上一次提交中（可修改提交信息）
+git commit --amend
+# 修改分支名
 git branch -m master master_copy
-#查看修改
+# 查看修改
 git diff
-#查看状态
+# 查看状态
 git status
-#子模块
+# 子模块
 git submodule
-#标签
+# 标签
 git tag
 ```
 
@@ -302,6 +304,16 @@ git fetch --unshallow
 ```bash
 # 把缓冲区调至500M
 git config --global http.postBuffer 524288000
+```
+
+### 删除已经提交到远程的文件
+
+```bash
+# 把目标文件夹从git追踪移除，本地文件保留
+git rm --cached -r <你的文件夹名>
+git add .
+git commit -m "提交信息"
+git push
 ```
 
 ## 图形化git工具
