@@ -4,6 +4,7 @@ date: 2026-05-09
 categories: 技术文档
 tags:
     - pandoc
+    - latex
 excerpt: false
 ---
 

@@ -7,7 +7,7 @@ tags:
   - api
   - linux
   - tui
-  - ai
+  - AI
 excerpt: false
 ---
 
