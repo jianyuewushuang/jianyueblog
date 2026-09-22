@@ -1,6 +1,6 @@
 ---
 title: "Jev: A Model that Substract Language from the LLM"
-date: 2026-09-22
+date: 2026-09-22 23:56:22
 categories: 其他
 tags:
     - AI
@@ -36,6 +36,6 @@ From my perspective, models like Jev that less depend on humans and language and
 
 ## The AI Wave in the Eyes of the Public
 
-I know a lot of people get anxious when there are some new AI tools but you even heard of them before. As if others will exceed you with these easily. I don't think it's a bad thing, because it's a solid example for how AI is powerful. But a lot of AI tools, LLMs or something similar, are overrated by the media to catch the public attention. But obviously the most media don't have the capabilities to test AI models like[Vals AI](https://www.vals.ai) (a platform that tests AI models professionally). What they publish is merely impressions and assumptions from people who have never used these models in real scenarios.
+I know a lot of people get anxious when there are some new AI tools but you even heard of them before. As if others will exceed you with these easily. I don't think it's a bad thing, because it's a solid example for how AI is powerful. But a lot of AI tools, LLMs or something similar, are overrated by the media to catch the public attention. But obviously the most media don't have the capabilities to test AI models like [Vals AI](https://www.vals.ai) (a platform that tests AI models professionally). What they publish is merely impressions and assumptions from people who have never used these models in real scenarios.
 
 So actually, there's no need at all for us to chase the wave of AI models. For most people, in most situations most of the time, Doubao is still the AI you need most.
