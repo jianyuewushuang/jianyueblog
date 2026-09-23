@@ -16,6 +16,8 @@ But truthfully, how many of them are really stunning? Or, just the another appro
 
 Just yesterday, TypeSafe AI opened its first model named Jev to public tests. And overnight, hundreds of thousands of media pushed it to me. At first, I thought it was just a new company launched a new LLM and nothing really matter. But when I sat down to look at its [official website](https://typesafe.ai) and read its [blogs](https://typesafe.ai/blog/introducing-system-one-models-and-jev), I realized it's not that simple as I previously thought.
 
+> On a side note, its official website in the neo-brutalist style is really innovative. It’s another one of my favorite official sites after [Mimo code](https://mimo.xiaomi.com/coder) and [Vals AI](https://www.vals.ai).
+
 First of all, Jev is even not a LLM! It's a model that can only read plain text or JSON and generate valid JSON. And the important thing is, it is extremely specialized in it. It's 193.6 times faster than other LLMs, and it's even 444.6 times cheaper. And the output fee for it is ZERO because of its highly structured answers.
 
 And in an era that every company wants to achieve the multimodality of LLMs, TypeSafe AI just builds an AI model that has a very limited modality. But it's just the most clever point.
