@@ -76,6 +76,19 @@ git push origin :<branch>
 git checkout -m <newBranchName>
 ```
 
+#### 对比不同分支
+
+```bash
+# 看dev分支相对于main的全部代码改动
+git diff main dev
+# 查看单个文件的改动
+git diff branchA branchB -- path/to/file.py
+# 把vscode设为difftool
+git config --global diff.tool vscode
+# 用difftool可视化查看
+git difftool branchA branchB
+```
+
 #### 其他分支管理命令
 
 ```bash
