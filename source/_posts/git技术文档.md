@@ -316,6 +316,23 @@ git commit -m "提交信息"
 git push
 ```
 
+### 把其他远程分支拉取到本地
+
+```bash
+# 查看远程分支
+git branch -r
+# 拉取所有远程分支
+git fetch --all
+# 切换到远程分支
+git checkout --track origin/<分支名>
+# 或
+git switch --track origin/<分支名>
+git checkout -b <分支名> origin/<分支名>
+git switch -b <分支名> origin/<分支名>
+# 临时只读查看远程分支代码，不创建本地分支（进入分离头指针状态）
+git checkout origin/<分支名>
+```
+
 ## 图形化git工具
 
 - Git GUI
