@@ -40,3 +40,34 @@ loginctl unlock-session 4
 但我在尝试之后发现并没有什么作用。而且进入虚拟终端需要按`Ctrl+Alt+F3`。
 
 现在我的桌面完全进不去，期待后续更新能尽快解决这个问题。
+
+---
+
+第二天上午我又尝试了一下使用x11显示协议：
+
+```bash
+sudo apt update
+sudo apt install plasma-session-x11 xinit
+sudo systemctl stop sddm
+startx
+```
+
+或者重启电脑后在sddm界面就可以把wayland切换为x11了。
+
+但使用x11显示协议进入桌面之后还是黑屏，只有鼠标可以使用。
+
+之后又看到这样一篇[bug报告](https://bugs.launchpad.net/ubuntu/+source/fontconfig/+bug/2168514)，说 Kubuntu 26.04 经由 neochat 的依赖链默认装了 `fonts-katex`，把 42 个 `.woff/.woff2` 网页字体直接塞进 `/usr/share/fonts/truetype/katex/`。`fontconfig` 把这些占位条目当成通用字体，`Qt 6.10` 查询字形回退时没检查 `charset`，直接 `SIGSEGV` 崩在 `FcCharSetHasChar` 里 。
+
+如果执行`fc-match sans`后输出`KaTeX_AMS-Regular.woff`，就说明遇到了这个问题。
+
+定位了问题之后就可以通过删除这些字体解决：
+
+```bash
+sudo apt purge fonts-katex libjs-katex
+sudo rm -rf /var/cache/fontconfig/*
+rm -rf ~/.cache/fontconfig
+sudo fc-cache -f
+fc-cache -f
+```
+
+这时输入`fc-match sans`应该会显示`NotoSans-Regular.ttf`，然后重启电脑就可以正常进入桌面了。
