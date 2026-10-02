@@ -65,7 +65,7 @@ Makefile本质是自动调用工具链进行项目构建的脚本，里面指明
 
 Ninja的定位和Make相同，CMake可以通过`CMakeLists.txt`生成`build.ninja`供Ninja读取并调用编译链构建整个项目。
 
-Ninja和Google 为 Chromium 开发的，设计哲学是以最快速度执行构建任务。要说`Makefile`还具有一定的人类可读性和可写性，那`build.ninja`就是几乎完全面向机器的，它的增量构建和空构建速度都极快，而且默认并行构建。同时，`build.ninja`的跨平台性也比`Makefile`要好很多。目前很多大型项目都选择使用Ninja。
+Ninja最初是Google 为 Chromium 开发的，设计哲学是以最快速度执行构建任务。要说`Makefile`还具有一定的人类可读性和可写性，那`build.ninja`就是几乎完全面向机器的，它的增量构建和空构建速度都极快，而且默认并行构建。同时，`build.ninja`的跨平台性也比`Makefile`要好很多。目前很多大型项目都选择使用Ninja。
 
 使用方式：
 
