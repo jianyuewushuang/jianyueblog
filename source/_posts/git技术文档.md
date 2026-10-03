@@ -322,8 +322,12 @@ git config --global http.postBuffer 524288000
 ### 删除已经提交到远程的文件
 
 ```bash
+# 查看所有被git追踪的文件
+git ls-files
 # 把目标文件夹从git追踪移除，本地文件保留
-git rm --cached -r <你的文件夹名>
+git rm --cached -r <文件夹名>
+# 移除单个文件
+git rm --cached <文件名>
 git add .
 git commit -m "提交信息"
 git push
