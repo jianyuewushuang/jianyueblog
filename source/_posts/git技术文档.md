@@ -212,12 +212,12 @@ git commit -m "Add .gitignore file"
 >如果文件已经被 Git 跟踪，需要先从 Git 缓存中移除
 
 ```bash
-# 移除单个文件（不删除本地文件）
-git rm --cached secret.txt
-
-# 移除整个目录（不删除本地目录）
-git rm -r --cached node_modules/
-
+# 查看所有被git追踪的文件
+git ls-files
+# 把目标文件夹从git追踪移除，本地文件保留
+git rm --cached -r <文件夹名>
+# 移除单个文件
+git rm --cached <文件名>
 # 提交更改
 git commit -m "Stop tracking ignored files"
 ```
