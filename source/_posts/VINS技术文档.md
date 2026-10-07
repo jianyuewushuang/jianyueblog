@@ -11,6 +11,9 @@ excerpt: false
 
 ## 前置知识
 
+- 这是一个机器人学网站: <https://atsushisakai.github.io/PythonRobotics/index.html>
+- 这是一个算法可视化网站: <https://www.redblobgames.com/>
+
 ### 四大坐标系
 
 #### 1. 世界坐标系 World Coordinate System ($X_w,Y_w,Z_w$)
@@ -102,6 +105,13 @@ $$
 
 关于坐标系和内参、外参的概念推荐看[这篇文章](https://blog.csdn.net/fengbingchun/article/details/130039337)。
 
+机器人常用的坐标系有：
+
+- `map`：全局地图坐标系
+- `odom`：局部里程计坐标系
+- `base_link`：机器人本体坐标系
+- `sensor_frames`：相机/雷达/IMU等坐标系，通过静态外参与`base_link`连接
+
 ## SLAM
 
 VIO仅实时输出自身位置，长时间运行会持续漂移，没办法记忆环境；SLAM(Simultaneous Localization and Mapping, 同步定位于建图)依靠前端特征跟踪、后端全局优化、回环检测和重定位，越走地图精度越高。
@@ -151,6 +161,17 @@ flowchart TD
 VIO属于SLAM的帧间位姿估计部分。
 
 [MATLAB对SLAM的介绍](https://ww2.mathworks.cn/discovery/slam.html)
+
+常见的SLAM种类：
+
+- 视觉SLAM
+- 激光雷达SLAM
+
+常见的地图种类：
+
+- 栅格地图
+- 点云地图
+- 语义地图
 
 ## VIO
 
