@@ -43,6 +43,8 @@ done
 find ./src -type f \( -name "*.c" -o -name "*.cpp" -o -name "*.h" -o -name "*.hpp" \) ! -path "*/third_party/*" ! -path "*/driver/*" -print0 | xargs -0 clang-format -i --style=file
 ```
 
+可在子仓库新建`.clang-format`写入：`DisableFormat: true`跳过格式化。
+
 ## clang-tidy
 
 clang-tidy 是 LLVM 配套的 C/C++ 静态检查工具，能查 bug、风格、现代 C++ 改造，支持自动修复代码。
@@ -68,7 +70,7 @@ Checks: >
   -readability-convert-member-functions-to-static,
   -modernize-loop-convert,
   -modernize-use-nodiscard
-# 当有第三方依赖命名不规范时可添加-readability-identifier-naming跳过命名检查
+# 当有第三方依赖命名不规范时可添加-readability-identifier-naming跳过命名检查或配合子仓库.clang-tidy跳过所有检查且无报错
 # 规定命名风格
 CheckOptions:
   readability-identifier-naming.ClassCase: CamelCase
@@ -91,6 +93,7 @@ UseColor: true
 可在`third_party`和`driver`文件夹中新建子`.clang-tidy`防止修改第三方库文件:
 
 ```yaml
+# 只进行命名检查，可配合父仓库-readability-identifier-naming跳过所有检查
 Checks: '-*,readability-identifier-naming'
 ```
 
@@ -164,12 +167,16 @@ repos:
   - id: no-commit-to-branch # 禁止直接commit到main/master
     args: [--branch, main]
 
-# clang-format C++格式化
+# clang-format C++格式化 clang-tidy 静态检查
 - repo: https://github.com/cpp-linter/cpp-linter-hooks
   rev: v1.8.4
   hooks:
   - id: clang-format
     args: [--style=file]
+    exclude: ^(build|install|log|third_party)/
+  - id: clang-tidy
+    args: [--version=23, --fix]
+    exclude: ^(build|install|log|third_party)/
 
 # cmake-lint 检查CMakeLists.txt
 - repo: https://github.com/cheshirekow/cmake-format-precommit
