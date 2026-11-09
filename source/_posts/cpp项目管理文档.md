@@ -243,3 +243,7 @@ pre-commit uninstall
 # 提交时跳过
 git commit --no-verify -m "skip check"
 ```
+
+## cmake
+
+让cmake画依赖图：`cmake --graphviz=build/deps.dot -S . -B build && dot -Tpng build/deps.dot -o deps.png`
