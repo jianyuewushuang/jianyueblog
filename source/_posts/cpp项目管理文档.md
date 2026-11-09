@@ -71,6 +71,7 @@ Checks: >
   -modernize-loop-convert,
   -modernize-use-nodiscard
 # 当有第三方依赖命名不规范时可添加-readability-identifier-naming跳过命名检查或配合子仓库.clang-tidy跳过所有检查且无报错
+
 # 规定命名风格
 CheckOptions:
   readability-identifier-naming.ClassCase: CamelCase
@@ -87,6 +88,41 @@ HeaderFilterRegex: 'src/(app|common|guidance|test)/.*|src/detection-rt/(src|incl
 FormatStyle: file
 
 # 开启终端彩色输出
+UseColor: true
+```
+
+更鲁棒的版本：
+
+```yaml
+Checks: >
+  -*,
+  readability-braces-around-statements,
+  readability-implicit-bool-conversion,
+  readability-isolate-declaration,
+  readability-named-parameter,
+  readability-redundant-lambda-parameter-list,
+  readability-redundant-member-init,
+  readability-redundant-nested-if,
+  modernize-use-nullptr,
+  modernize-use-override,
+  modernize-use-using,
+  modernize-use-bool-literals,
+  modernize-use-auto,
+  modernize-return-braced-init-list,
+  modernize-redundant-void-arg,
+  modernize-deprecated-headers,
+  modernize-unary-static-assert,
+  modernize-use-equals-default,
+  modernize-use-noexcept
+CheckOptions:
+  readability-identifier-naming.ClassCase: CamelCase
+  readability-identifier-naming.StructCase: CamelCase
+  readability-identifier-naming.FunctionCase: lower_case
+  readability-identifier-naming.VariableCase: lower_case
+  readability-identifier-naming.ConstantCase: UPPER_CASE
+  readability-identifier-naming.MacroCase: UPPER_CASE
+HeaderFilterRegex: 'src/(app|common|guidance|test)/.*|src/detection-rt/(src|include)/.*|src/vio/(estimator/(src|include)|extrinsic|imu_accel|imu_noise|intrinsic)/.*'
+FormatStyle: file
 UseColor: true
 ```
 
@@ -156,7 +192,9 @@ repos:
   rev: v6.0.0
   hooks:
   - id: trailing-whitespace # 删掉行尾空格
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
   - id: end-of-file-fixer # 保证文件末尾换行
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
   - id: check-yaml # yaml语法检查
   - id: check-added-large-files # 禁止提交大文件
   - id: check-json          # JSON语法校验
@@ -173,30 +211,34 @@ repos:
   hooks:
   - id: clang-format
     args: [--style=file]
-    exclude: ^(build|install|log|third_party)/
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
   - id: clang-tidy
     args: [--version=23, --fix]
-    exclude: ^(build|install|log|third_party)/
+    files: \.(cpp|cc|cxx|c)$ # hpp会被间接检查
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
 
-# cmake-lint 检查CMakeLists.txt
+# cmake-lint 检查 CMakeLists.txt
 - repo: https://github.com/cheshirekow/cmake-format-precommit
   rev: v0.6.13
   hooks:
-  - id: cmake-lint
-  - id: cmake-format
+  - id: cmake-lint # 或 - id: cmake-format（两格缩进）
 
 # Shell 脚本检查
 - repo: https://github.com/shellcheck-py/shellcheck-py
   rev: v0.11.0.1-1
   hooks:
   - id: shellcheck
+    args: [-S, error]
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
+
 
 # markdown 文档检查
 - repo: https://github.com/markdownlint/markdownlint
   rev: v0.18.1
   hooks:
   - id: markdownlint
-    args: [--fix, --rules, ~MD013]
+    args: [--fix, --rules, "~MD013, ~MD029"]
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
 
 # python检查
 # ruff（替代 flake8 + isort，速度极快，推荐）
@@ -242,6 +284,64 @@ pre-commit autoupdate
 pre-commit uninstall
 # 提交时跳过
 git commit --no-verify -m "skip check"
+```
+
+c++工程：
+
+```yaml
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v6.0.0
+  hooks:
+  - id: trailing-whitespace # 删掉行尾空格
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
+  - id: end-of-file-fixer # 保证文件末尾换行
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
+  - id: check-yaml # yaml语法检查
+  - id: check-added-large-files # 禁止提交大文件
+  - id: check-json          # JSON语法校验
+  - id: check-toml          # TOML校验
+  - id: check-merge-conflict # 检查有没有残留的<<<<<<<合并标记
+  - id: check-case-conflict # 大小写重名文件
+  - id: detect-private-key  # 禁止提交私钥
+  - id: no-commit-to-branch # 禁止直接commit到main/master
+    args: [--branch, main]
+
+# clang-format C++格式化 / clang-tidy 静态检查
+- repo: https://github.com/cpp-linter/cpp-linter-hooks
+  rev: v1.8.4
+  hooks:
+  - id: clang-format
+    args: [--style=file]
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
+  - id: clang-tidy
+    args: [--version=23, --fix]
+    files: \.(cpp|cc|cxx|c)$
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/|^sim_xtdrone2/|^src/app/(app_config|camera_service|pose_gate|glue/comm_imu_source)\.cpp$|^src/detection-rt/src/yolo_npu\.cpp$|^src/test/test_app/test_(detection_postprocess|heartbeat_wait|pose_gate|telemetry_freshness|vio_runtime)\.cpp$|^src/vio/estimator/(src/(depth_range|vio_runtime)\.cpp|tests/test_(camera_cadence|depth_range)\.cpp|tools/depth_range_probe\.cpp)$'
+
+- repo: https://github.com/cheshirekow/cmake-format-precommit
+  rev: v0.6.13
+  hooks:
+  - id: cmake-lint
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
+
+# Shell 脚本检查：-S error 只报致命问题
+- repo: https://github.com/shellcheck-py/shellcheck-py
+  rev: v0.11.0.1-1
+  hooks:
+  - id: shellcheck
+    args: [-S, error]
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
+
+# markdown 文档检查
+- repo: https://github.com/markdownlint/markdownlint
+  rev: v0.18.1
+  hooks:
+  - id: markdownlint
+    args: [--fix, --rules, "~MD013, ~MD029"]
+    exclude: '(^|/)(build|install|log|third_party)/|^src/driver/'
 ```
 
 ## cmake
