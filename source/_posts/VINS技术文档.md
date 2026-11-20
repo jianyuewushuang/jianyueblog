@@ -114,7 +114,7 @@ $$
 
 ## SLAM
 
-VIO仅实时输出自身位置，长时间运行会持续漂移，没办法记忆环境；SLAM(Simultaneous Localization and Mapping, 同步定位于建图)依靠前端特征跟踪、后端全局优化、回环检测和重定位，越走地图精度越高。
+VIO仅实时输出自身位置，长时间运行会持续漂移，没办法记忆环境；SLAM(Simultaneous Localization and Mapping, 同步定位与建图)依靠前端特征跟踪、后端全局优化、回环检测和重定位，越走地图精度越高。
 
 ```mermaid
 flowchart TD
