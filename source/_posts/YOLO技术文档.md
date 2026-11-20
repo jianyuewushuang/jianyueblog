@@ -489,6 +489,16 @@ python main.py
 
 推荐看[B站UP主林亿饼](https://space.bilibili.com/14282305?spm_id_from=333.788.upinfo.head.click)的视频。
 
+## YOLO-World
+
+YOLO-World是基于 YOLOv8 的实时开放词汇目标检测。
+
+arxiv论文：<https://arxiv.org/abs/2401.17270v3>
+
+github：<https://github.com/AILab-CVC/YOLO-World>
+
+ultralytics使用文档：<https://docs.ultralytics.com/zh/models/yolo-world>
+
 ## 实验
 
 我也用YOLO进行了一些训练实验，以下是我的部分实验报告。
