@@ -332,11 +332,8 @@ sudo apt install fcitx5 fcitx5-pinyin fcitx5-config-qt
 #可安装小狼毫输入法fcitx5-rime
 ```
 
-打开 系统设置 → 自动启动
-右上角【添加应用程序】→ 搜索fcitx5，选中添加
-系统设置 → 输入设备 → 输入法
-输入法框架：选择 Fcitx5
-点击【添加输入法】→ 找到【拼音 (Pinyin)】添加到右侧列表
+1. 打开`设置->自动启动->添加->应用程序`搜索并添加`Fcitx 5`
+2. 在`设置->键盘->虚拟键盘`中选择`Fcitx 5 Wayland 启动器`
 
 拼音数量、输入法大小等图形化配置
 
